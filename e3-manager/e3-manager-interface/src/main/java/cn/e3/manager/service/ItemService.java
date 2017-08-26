@@ -1,6 +1,7 @@
 package cn.e3.manager.service;
 
 import cn.e3.pojo.TbItem;
+import cn.e3.utils.DatagridPageBean;
 
 public interface ItemService {
 	
@@ -11,5 +12,13 @@ public interface ItemService {
 	 * 方法:findItemByID
 	 */
 	public TbItem findItemByID(Long itemId);
+	
+	/**
+	 * 需求:分页查询 商品信息
+	 * 参数:Integer page,Integer rows
+	 * 返回值:DatagridPageBean
+	 * 方法:findItemList
+	 */
+	public DatagridPageBean findItemList(Integer page,Integer rows);
 
 }
