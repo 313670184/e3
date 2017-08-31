@@ -114,8 +114,8 @@ var E3= E3MALL = {
     		_ele.unbind('click').click(function(){
     			$("<div>").css({padding:"5px"}).html("<ul>")
     			.window({
-    				width:'500',
-    			    height:"450",
+    				width:'350',
+    			    height:"300",
     			    modal:true,
     			    closed:true,
     			    iconCls:'icon-save',

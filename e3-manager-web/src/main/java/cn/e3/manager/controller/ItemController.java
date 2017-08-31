@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.e3.manager.service.ItemService;
 import cn.e3.pojo.TbItem;
+import cn.e3.pojo.TbItemDesc;
 import cn.e3.utils.DatagridPageBean;
+import cn.e3.utils.E3mallResult;
 
 @Controller
 public class ItemController {
@@ -45,5 +47,13 @@ public class ItemController {
 					   @RequestParam(defaultValue = "30") Integer rows){
 		DatagridPageBean findItemList = itemService.findItemList(page, rows);
 		return findItemList;
+	}
+	
+	@RequestMapping("/item/save")
+	@ResponseBody
+	public E3mallResult saveItem(TbItem item,TbItemDesc desc){
+		System.out.println(item+"\n"+desc);
+		E3mallResult addItem = itemService.addItem(item, desc);
+		return addItem;
 	}
 }
